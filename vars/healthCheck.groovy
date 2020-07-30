@@ -3,11 +3,11 @@
      
     stage("complilation"){
         
-        sh "./gradlew build --scan" 
+        sh "./gradlew run" 
     }
-    stage("tests"){
-        sh "./gradlew test"      
+    //stage("tests"){
+      //  sh "./gradlew test"      
         
       
-    }
+    //}
 }
