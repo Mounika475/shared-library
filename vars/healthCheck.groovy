@@ -9,9 +9,9 @@
         //git url: "https://github.com/jenkinsci/${config.name}-plugin.git"
  def call(Map config){
     stage("complilation"){
-        steps{
+        
         sh "mvn package" 
-        }
+        
         
         //mail to: '...', subject: "${config.name} plugin build", body: '...'
     }
