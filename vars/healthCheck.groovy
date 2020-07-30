@@ -3,10 +3,10 @@
      
     stage("complilation"){
         
-        sh "mvn package" 
+        sh "./gradlew build --scan" 
     }
     stage("tests"){
-        sh "mvn test"      
+        sh "./gradlew test"      
         
       
     }
