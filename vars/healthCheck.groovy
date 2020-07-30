@@ -7,7 +7,7 @@
 //sh 'mvn package'
 //])
         //git url: "https://github.com/jenkinsci/${config.name}-plugin.git"
- def build(){
+ def call(Map config){
     stage("complilation"){
         sh "mvn package" 
         
