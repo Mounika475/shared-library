@@ -1,26 +1,25 @@
-def call(){
-    node {
-        stage('Checkout') {
-            checkout scm
+def call(int buildNumber) {
+  if (buildNumber % 2 == 0) {
+    pipeline {
+      agent any
+      stages {
+        stage('Even Stage') {
+          steps {
+            echo "The build number is even"
+          }
         }
-
-        // Execute different stages depending on the job
-        //if(env.JOB_NAME.contains("deploy")){
-          //  packageArtifact()
-        //} else if(env.JOB_NAME.contains("test")) {
-          //  buildAndTest()
-        //}
+      }
     }
-}
-
-def packageArtifact(){
-    stage("Package artifact") {
-        sh "./gradlew build --scan"
+  } else {
+    pipeline {
+      agent any
+      stages {
+        stage('Odd Stage') {
+          steps {
+            echo "The build number is odd"
+          }
+        }
+      }
     }
-}
-
-//def buildAndTest(){
-   // stage("Backend tests"){
-     //   sh "mvn test"
-   }
+  }
 }
