@@ -17,7 +17,7 @@
         } 
    stage("deploy"){
        
-    sh deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://18.188.40.43:8080/')], contextPath: 'Gradle1', war: '**/*.war'
+    sh "deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://18.188.40.43:8080/')], contextPath: 'Gradle1', war: '**/*.war'"
    }
     
 }
