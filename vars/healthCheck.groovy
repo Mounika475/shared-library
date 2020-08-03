@@ -16,8 +16,9 @@
         
         } 
    stage("deploy"){
-       
-    sh "deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://18.188.40.43:8080/')], contextPath: 'gradle1', war: '**/*.target**/*.war**'"
+ 
+    sh "curl -v -u tomcat:tomcat -T /root/.jenkins/workspace/shared1/target/spring3-mvc-maven-xml-hello-world-3.0-SNAPSHOT.war
+ 'http://ec2-18-188-40-43.us-east-2.compute.amazonaws.com:8080//manager/text/deploy?path=/gradle1'"
    }
     
 }
