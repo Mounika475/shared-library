@@ -5,7 +5,7 @@ def call(Map config){
          pmd canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '**/pmd.xml.', unHealthy: ''
           
      
-       
+     }
     
 }
 
